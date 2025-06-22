@@ -1,0 +1,240 @@
+@use "../utils/variables" as v;
+@use "../utils/mixins" as m;
+
+.fairy-tail{
+  &__wrapper{
+    max-width: 1562px;
+    box-sizing: border-box;
+    padding: 216px 2px 0 0;
+
+    @include m.respond(large){
+      max-width: 1242px;
+      padding: 132px 2px 0 0;
+    }
+
+    @include m.respond(medium){
+      max-width: 962px;
+      padding: 96px 2px 0 0;
+    }
+
+    @include m.respond(small){
+      max-width: 100%;
+      padding: 40px 4px 0;
+    }
+  }
+
+  &__container{
+    display: flex;
+    justify-content: space-between;
+    gap:55px;
+
+    @include m.respond(large){
+      gap: 32px;
+    }
+
+    @include m.respond(medium){
+      gap: 24px;
+    }
+
+    @include m.respond(small){
+      display: block;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+  }
+
+  &__inner{
+    &:first-of-type{
+      flex: 1 1 61.58%;
+      min-width: 0;
+
+      img{
+        max-width:100%;
+      }
+    }
+
+    &:last-of-type{
+      flex: 1 1 34.9%;
+      min-width: 0;
+      line-height: 1.17;
+      margin-top: 2.3vw;
+
+      @include m.respond(large){
+        margin-top: 0;
+      }
+
+      @include m.respond(medium){
+        font-size: v.$mobile-fs;
+        margin-top: 0;
+      }
+
+      @include m.respond(small){
+        font-size: v.$mobile-s-fs;
+        margin-top: 12px;
+      }
+    }
+  }
+
+  &__titles{
+    position: relative;
+    margin-bottom: 120px;
+
+    @include m.respond(large){
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    @include m.respond(medium){
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    @include m.respond(small){
+      text-align: center;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__title{
+    padding-left: 360px;
+
+    @include m.respond(large){
+      padding-left: 0;
+    }
+
+    @include m.respond(medium){
+      padding-left: 0;
+    }
+
+    @include m.respond(small){
+      padding-left: 0;
+    }
+  }
+
+  &__subtitle{
+    position: absolute;
+    top: 90px;
+    left: 541px;
+
+    @include m.respond(large){
+      top: 80px;
+      left: 680px;
+    }
+
+    @include m.respond(medium){
+      position: static;
+    }
+
+    @include m.respond(small){
+      position: static;
+    }
+  }
+
+  &__swiper{
+    position: relative;
+  }
+
+  &__btn-prev,
+  &__btn-next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: v.$bg-color;
+    z-index: 100;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    opacity: 1;
+
+    &:hover{
+      fill: v.$accent-color;
+    }
+
+    @include m.respond(large){
+      width: 60px;
+      height: 60px;
+    }
+
+    @include m.respond(medium){
+      width: 40px;
+      height: 40px;
+    }
+
+    @include m.respond(small){
+      display: none;
+    }
+  }
+
+  &__btn-prev{
+    left: 0;
+  }
+
+  &__btn-next{
+    transform:translateY(-50%) rotate(180deg);
+    right: 0;
+  }
+
+  &__text{
+    margin-bottom: 50px;
+
+    @include m.respond(large){
+      margin-bottom: 32px;
+    }
+
+    @include m.respond(medium){
+      margin-bottom: 16px;
+    }
+
+    @include m.respond(small){
+      margin-bottom: 8px;
+    }
+  }
+
+  &__list-name{
+    margin-bottom: 50px;
+
+    @include m.respond(large){
+      margin-bottom: 32px;
+    }
+
+    @include m.respond(medium){
+      margin-bottom: 16px;
+    }
+
+    @include m.respond(small){
+      margin-bottom: 8px;
+    }
+  }
+
+  &__list{
+    margin-bottom: 50px;
+
+    @include m.respond(large){
+      margin-bottom: 32px;
+    }
+
+    @include m.respond(medium){
+      margin-bottom: 16px;
+    }
+
+    @include m.respond(small){
+      margin-bottom: 8px;
+    }
+
+    li:last-of-type{
+      margin-top: 54px;
+
+      @include m.respond(large){
+        margin-top: 32px;
+      }
+
+      @include m.respond(medium){
+        margin-top: 16px;
+      }
+
+      @include m.respond(small){
+        margin-top: 8px;
+      }
+    }
+  }
+}

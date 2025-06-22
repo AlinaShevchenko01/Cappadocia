@@ -1,0 +1,97 @@
+@use "../utils/mixins" as m;
+@use "../utils/variables" as v;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: v.$first-family;
+  font-size: v.$main-fs;
+  font-weight: v.$main-fw;
+  color: v.$main-color;
+  background-color: v.$bg-color;
+}
+
+h2{
+  font-family: v.$second-family;
+  font-weight: v.$second-fw;
+  font-size: v.$title-m-fs;
+  color: v.$accent-color;
+
+  @include m.respond(medium){
+    font-size: v.$title-s-fs;
+  }
+  @include m.respond(small){
+    font-size: v.$title-xs-fs;
+  }
+}
+
+h4{
+  font-size: v.$second-fs;
+  font-style: italic;
+
+  @include m.respond(medium){
+    font-size: v.$main-fs;
+  }
+  @include m.respond(small){
+    font-size: v.$mobile-fs;
+  }
+}
+
+h5{
+  font-weight: v.$second-fw;
+}
+
+a{
+  text-decoration: none;
+  font-size: v.$second-fs;
+  font-weight: v.$second-fw;
+  color: v.$main-color;
+
+  @include m.respond(medium){
+    font-size: v.$main-fs;
+  }
+
+  @include m.respond(small){
+    font-size: v.$mobile-s-fs;
+  }
+}
+
+button{
+  box-sizing: border-box;
+  font-family: v.$first-family;
+  font-size: v.$second-fs;
+  font-weight: v.$main-fw;
+  text-align: center;
+  color: v.$main-color;
+  background-color: v.$bg-color;
+  border: 1px solid v.$accent-color;
+
+  @include m.respond(medium){
+    font-size: v.$mobile-fs;
+  }
+
+  @include m.respond(small){
+    font-size: v.$mobile-fs;
+  }
+
+
+  &:hover{
+    color: v.$bg-color;
+    background-color: v.$accent-color;
+    border: 1px solid v.$bg-color;
+
+    @include m.respond(medium){
+      color: v.$main-color;
+      background-color: v.$bg-color;
+      border: 1px solid v.$accent-color;
+    }
+
+    @include m.respond(small){
+      color: v.$main-color;
+      background-color: v.$bg-color;
+      border: 1px solid v.$accent-color;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@use "base/reset";
+@use "base/base";
+
+@use "utils/fonts" as f;
+@use "utils/mixins" as m;
+@use "utils/utils";
+@use "utils/variables" as v;
+
+@use "components/footer";
+@use "components/header";
+@use "components/modal-book";
+@use "components/modal-accept";
+@use "components/section1-fairy_tail";
+@use "components/section2-our_trip";
+@use "components/section3-hotel";
+@use "components/section4-price";
+

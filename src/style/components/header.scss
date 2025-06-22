@@ -1,0 +1,214 @@
+@use "../utils/variables" as v;
+@use "../utils/mixins" as m;
+
+.header{
+  background-image: url(../../assets/img/header/background-header.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 1080px;
+
+  @include m.respond(large){
+    height: 810px;
+  }
+
+  @include m.respond(medium){
+    height: 674px;
+  }
+
+  @include m.respond(small){
+    height: 432px;
+  }
+
+  &__wrapper{
+    box-sizing: border-box;
+    max-width: 1264px;
+    padding: 71px 32px 0;
+    margin: 0 auto;
+
+    @include m.respond(large){
+      max-width: 986px;
+    }
+
+    @include m.respond(medium){
+      max-width: 772px;
+      padding: 32px 16px 0;
+    }
+
+    @include m.respond(small){
+      max-width: 432px;
+      padding: 32px 16px 0;
+    }
+  }
+
+  &__menu{
+  position: fixed;
+  width: 62.5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 64px;
+  z-index: 2;
+
+    @include m.respond(large){
+      width: 72vw;
+      gap: 48px;
+    }
+
+    @include m.respond(medium){
+      width: 72vw;
+      gap: 32px;
+    }
+
+    @include m.respond(small){
+      width: 68vw;
+      gap: 12px;
+    }
+  }
+
+  &__list{
+    max-width: 364px;
+    display: flex;
+    justify-content: space-between;
+    gap: 45px;
+
+    @include m.respond(medium){
+      gap:32px
+    }
+
+    @include m.respond(small){
+      gap:8px
+    }
+
+    li:first-of-type{
+      padding-right: 8px;
+    }
+
+    li:last-of-type{
+      padding-right: 25px;
+    }
+
+    a{
+      box-sizing: border-box;
+      border-radius: 20%;
+      background-color: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    a:hover{
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+
+      @include m.respond(small){
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__tel{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap:10px;
+    border-radius: 20%;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    padding-right: 2px;
+
+    @include m.respond(medium){
+      gap: 4px;
+    }
+
+    @include m.respond(small){
+      font-size: v.$mobile-s-fs;
+      gap: 1px;
+    }
+
+    svg{
+      @include m.respond(medium){
+        width: 24px;
+        height: 24px;
+      }
+
+      @include m.respond(small){
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    span:hover{
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+
+      @include m.respond(small){
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__container{
+    position: relative;
+    margin-top: 224px;
+
+    @include m.respond(large){
+      margin-top: 192px;
+    }
+
+    @include m.respond(small){
+      margin-top: 152px;
+    }
+  }
+
+  &__title{
+    font-family: v.$second-family;
+    font-size: v.$title-fs;
+    font-weight: v.$second-fw;
+    padding-left: 63px;
+
+    @include m.respond(large){
+      font-size: v.$title-l-fs;
+      text-align: center;
+      padding-left: 0;
+    }
+
+    @include m.respond(medium){
+      font-size: v.$title-m-fs;
+      text-align: center;
+      padding-left: 0;
+    }
+
+    @include m.respond(small){
+      font-size: v.$title-s-fs;
+      text-align: center;
+      padding-left: 0;
+    }
+  }
+
+  &__subtitle{
+    font-size: v.$title-s-fs;
+    font-style: italic;
+    position: absolute;
+    top: 226px;
+    right: 136px;
+    text-align: right;
+
+    @include m.respond(large){
+      font-size: v.$title-xs-fs;
+      top: 132px;
+      right: 148px
+    }
+
+    @include m.respond(medium){
+      font-size: v.$title-xs-fs;
+      top: 80px;
+      right: 176px
+    }
+
+    @include m.respond(small){
+      font-size: v.$main-fs;
+      top: 48px;
+      right: 848px
+    }
+  }
+}
+

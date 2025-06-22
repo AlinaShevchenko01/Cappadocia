@@ -1,0 +1,210 @@
+@use "../utils/variables" as v;
+@use "../utils/mixins" as m;
+
+.our-trip{
+  display: flex;
+  justify-content: flex-end;
+
+  &__wrapper{
+    box-sizing: border-box;
+    max-width: 1576px;
+    min-width: 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 55px;
+    padding: 194px 0 212px 16px;
+
+    @include m.respond(large){
+      max-width: 1242px;
+      gap: 32px;
+      padding: 132px 0 132px 16px;
+    }
+
+    @include m.respond(medium){
+      max-width: 962px;
+      gap: 24px;
+      padding: 96px 0 96px 12px;
+    }
+
+    @include m.respond(small){
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+      padding: 40px 4px;
+    }
+  }
+
+  &__inner{
+    &:first-of-type{
+      flex: 1 1 25%;
+    }
+
+    &:last-of-type{
+      flex: 1 1 61.58%;
+      min-width: 0;
+      max-width: 61.58%;
+
+      img{
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__titles{
+    position: relative;
+    padding-top: 16px;
+    margin-bottom: 120px;
+
+    @include m.respond(large){
+      margin-bottom: 60px;
+    }
+
+    @include m.respond(medium){
+      margin-bottom: 32px;
+    }
+
+    @include m.respond(small){
+      margin-bottom: 18px;
+    }
+  }
+
+  &__subtitle{
+    position: absolute;
+    top:104px;
+    left: 242px;
+
+    @include m.respond(medium){
+      position: static;
+      text-align: center;
+    }
+    @include m.respond(small){
+      position: static;
+      text-align: center;
+    }
+  }
+
+  &__days{
+    font-size: v.$second-fs;
+    font-weight: v.$second-fw;
+    line-height: 1.15;
+    margin-bottom: 50px;
+
+    @include m.respond(large){
+      font-size: v.$main-fs;
+      margin-bottom: 24px;
+    }
+
+    @include m.respond(medium){
+      font-size: v.$mobile-fs;
+      margin-bottom: 18px;
+    }
+
+    @include m.respond(small){
+      font-size: v.$mobile-s-fs;
+      margin-bottom: 12px;
+    }
+
+    &:last-of-type{
+      margin-bottom: 54px;
+
+      @include m.respond(large){
+        margin-bottom: 24px;
+      }
+
+      @include m.respond(medium){
+        margin-bottom: 16px;
+      }
+
+      @include m.respond(small){
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  &__days__except{
+    margin-bottom: 26px;
+
+    @include m.respond(large){
+      margin-bottom: 24px;
+    }
+
+    @include m.respond(medium){
+      margin-bottom: 12px;
+    }
+
+    @include m.respond(small){
+      margin-bottom: 8px;
+    }
+  }
+
+  &__schedule{
+    font-weight: v.$main-fw;
+    margin-top: 20px;
+
+    @include m.respond(large){
+      margin-top: 16px;
+    }
+
+    @include m.respond(medium){
+      margin-top: 12px;
+    }
+
+    @include m.respond(small){
+      margin-top: 8px;
+    }
+  }
+
+  &__btn{
+    button{
+      padding: 11px 64px;
+
+      @include m.respond(medium){
+        padding: 8px 32px;
+      }
+
+      @include m.respond(small){
+        padding: 8px 32px;
+      }
+    }
+  }
+
+  &__btn-next,
+  &__btn-prev{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: v.$bg-color;
+    z-index: 100;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    opacity: 1;
+
+    &:hover{
+      fill: v.$accent-color;
+    }
+
+    @include m.respond(large){
+      width: 60px;
+      height: 60px;
+    }
+
+    @include m.respond(medium){
+      width: 40px;
+      height: 40px;
+    }
+
+    @include m.respond(small){
+      display: none;
+    }
+  }
+
+  &__btn-prev{
+    left: 0;
+  }
+
+  &__btn-next{
+    transform:translateY(-50%) rotate(180deg);
+    right: 0;
+  }
+}

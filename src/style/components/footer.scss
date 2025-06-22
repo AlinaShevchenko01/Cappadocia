@@ -1,0 +1,209 @@
+@use "../utils/variables" as v;
+@use "../utils/mixins" as m;
+
+.footer{
+  background-image: url("../../assets/img/footer/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 1180px;
+
+  @include m.respond(large){
+    height: 860px;
+  }
+
+  @include m.respond(medium){
+    height: 738px;
+  }
+
+  @include m.respond(small){
+    height: 432px;
+  }
+
+  &__wrapper{
+    position: relative;
+  }
+
+  &__contacts{
+    box-sizing: border-box;
+    max-width: 356px;
+    position: absolute;
+    top:5vw;
+    left:24.79vw;
+    background-image: url("../../assets/img/footer/balloon.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top center;
+    text-align: center;
+    padding: 84px 64px 124px 43px;
+
+    @include m.respond(large){
+      top:10vw;
+      left:22vw;
+      padding: 40px 20px 110px;
+    }
+
+    @include m.respond(medium){
+      top:10vw;
+      left:22vw;
+      padding: 38px 16px 110px;
+    }
+
+    @include m.respond(small){
+      top: 16vw;
+      left: 24vw;
+      padding: 32px 12px 80px;
+    }
+  }
+
+  &__title{
+    font-family: v.$second-family;
+    font-size: v.$footer-fs;
+    color: v.$accent-color;
+    margin-bottom: 36px;
+
+    @include m.respond(large){
+      font-size: v.$title-s-fs;
+      margin-bottom: 28px;
+    }
+
+    @include m.respond(medium){
+      font-size: v.$title-xs-fs;
+      margin-bottom: 16px;
+    }
+
+    @include m.respond(small){
+      font-size: v.$title-xs-fs;
+      margin-bottom: 12px;
+    }
+  }
+
+  &__contacts-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    li{
+      margin-bottom: 32px;
+
+      @include m.respond(medium){
+        margin-bottom: 12px;
+      }
+
+      @include m.respond(small){
+        margin-bottom: 12px;
+      }
+
+      &:first-of-type{
+        padding-right: 20px;
+        margin-bottom: 12px;
+      }
+
+      &:hover{
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        fill: v.$main-color;
+
+        @include m.respond(small){
+          text-decoration: none;
+        }
+      }
+    }
+
+    a{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      font-size: v.$main-fs;
+      font-weight: v.$main-fw;
+      line-height: 1.1;
+
+      @include m.respond(medium){
+        font-size: v.$mobile-fs;
+      }
+
+      @include m.respond(small){
+        font-size: v.$mobile-s-fs;
+      }
+
+      svg{
+        width: 30px;
+        height: 30px;
+        fill: v.$accent-color;
+
+        @include m.respond(medium){
+          width: 18px;
+          height: 18px;
+        }
+
+        @include m.respond(small){
+          width: 12px;
+          height: 12px;
+        }
+
+        &:hover{
+          fill: v.$main-color;
+
+          @include m.respond(small){
+            fill: v.$accent-color;
+          }
+        }
+      }
+    }
+  }
+
+  &__social{
+    max-width: 120px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 22px;
+    gap: 15px;
+
+    @include m.respond(large){
+      padding-left: 0;
+    }
+
+    @include m.respond(medium){
+      gap: 10px;
+      padding-left: 0;
+    }
+
+    @include m.respond(small){
+      gap: 8px;
+      padding-left: 0;
+    }
+
+    li{
+      &:first-of-type{
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__text{
+    font-family: v.$second-family;
+    font-size: v.$footer-fs;
+    position: absolute;
+    top: 16.93vw;
+    left: 50.57vw;
+
+    @include m.respond(large){
+      font-size: v.$title-s-fs;
+      top: 22vw;
+      left: 62vw;
+    }
+
+    @include m.respond(medium){
+      font-size: v.$title-xs-fs;
+      top: 22vw;
+      left: 62vw;
+    }
+
+    @include m.respond(small){
+      font-size: v.$title-xs-fs;
+      top: 2vw;
+      left: 36vw;
+    }
+  }
+}

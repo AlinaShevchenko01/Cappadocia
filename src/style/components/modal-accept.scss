@@ -1,0 +1,58 @@
+@use "../utils/variables" as v;
+@use "../utils/mixins" as m;
+
+.modal-accept{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.07);
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  &.modal-open{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  &__wrapper{
+    box-sizing: border-box;
+    max-width: 848px;
+    min-width: 320px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: v.$second-fs;
+    font-weight: v.$second-fw;
+    text-align: center;
+    background-color: v.$bg-color;
+    border: 1px solid v.$accent-color;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    margin: 0 auto;
+
+    @include m.respond(small){
+      font-size: v.$main-fs;
+    }
+  }
+
+  &__close{
+    position: absolute;
+    top:10px;
+    right:10px;
+    width: 24px;
+    height: 24px;
+    fill: v.$main-color;
+    cursor: pointer;
+
+    @include m.respond(small){
+      width: 18px;
+      height: 18px;
+    }
+  }
+}

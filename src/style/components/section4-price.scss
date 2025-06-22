@@ -1,0 +1,443 @@
+@use "../utils/variables" as v;
+@use "../utils/mixins" as m;
+
+.price{
+  &__wrapper{
+    position: relative;
+    box-sizing: border-box;
+    max-width: 1369px;
+    padding: 216px 32px 200px 84px;
+    margin: 0 auto;
+
+    @include m.respond(medium){
+      max-width: 980px;
+      padding: 132px 32px;
+    }
+
+    @include m.respond(small){
+      max-width: 456px;
+      padding: 60px 16px;
+    }
+  }
+
+  &__titles{
+    position: relative;
+    margin-bottom: 122px;
+
+    @include m.respond(medium){
+      margin-bottom: 80px;
+    }
+
+    @include m.respond(small){
+      text-align: center;
+      margin-bottom: 2px;
+    }
+  }
+
+  &__subtitle{
+    position: absolute;
+    top: 88px;
+    left: 122px;
+
+    @include m.respond(medium){
+      top: 52px;
+      left: 68px;
+    }
+
+    @include m.respond(small){
+      position: static;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__inner{
+    display: flex;
+    justify-content: center;
+
+    @include m.respond(small){
+      flex-direction: column;
+    }
+  }
+
+  &__inner_service{
+    box-sizing: border-box;
+    max-width: 971px;
+    gap: 70px;
+    margin-bottom: 180px;
+
+    @include m.respond(large){
+      margin-bottom: 100px;
+    }
+
+    @include m.respond(medium){
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 64px;
+    }
+
+    @include m.respond(small){
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+  }
+
+  &__inner_form{
+    max-width: 1086px;
+    gap: 113px;
+    margin-left: 110px;
+
+    @include m.respond(large){
+      justify-content: space-between;
+      gap: 60px;
+    }
+
+    @include m.respond(medium){
+      justify-content: space-between;
+      align-items: center;
+      gap: 32px;
+      margin-left: 0;
+    }
+
+    @include m.respond(small){
+      flex-direction: column-reverse;
+      margin-left: 0;
+      gap: 16px;
+    }
+  }
+
+  &__column{
+    &:first-of-type{
+      flex: 0 1 calc(58.19% - 35px);
+
+      @include m.respond(medium){
+        flex: 0 1 calc(58.19% - 16px);
+      }
+
+      @include m.respond(small){
+        flex: 0 1 100%;
+      }
+    }
+
+    &:last-of-type{
+      flex: 0 1 calc(41.81% - 35px);
+
+      @include m.respond(medium){
+        flex: 0 1 calc(41.81% - 16px);
+      }
+
+      @include m.respond(small){
+        flex: 0 1 100%;
+      }
+    }
+  }
+
+  &__service{
+    font-size: v.$second-fs;
+    margin-bottom: 54px;
+
+    @include m.respond(medium){
+      font-size: v.$main-fs;
+      margin-bottom: 28px;
+    }
+
+    @include m.respond(small){
+      font-size: v.$mobile-fs;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__service-list{
+    li{
+      line-height: 1.1;
+      margin-bottom: 22px;
+
+      @include m.respond(medium){
+        font-size: v.$mobile-fs;
+        margin-bottom: 16px;
+      }
+
+      @include m.respond(small){
+        font-size: v.$mobile-s-fs;
+        line-height: 1.1;
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  &__decoration{
+    position: absolute;
+    top: 318px;
+    right: 190px;
+
+    @include m.respond(large){
+      top: 200px;
+      right: 260px;
+    }
+
+    @include m.respond(medium){
+      top: 118px;
+      right: 140px;
+    }
+
+    @include m.respond(small){
+      display: none;
+    }
+  }
+
+  &__balloon{
+    position: absolute;
+    cursor: pointer;
+    transition: top 5s ease;
+    z-index: 1;
+
+    &.fly{
+      top:-60vw;
+    }
+  }
+
+  &__balloon_small-top,
+  &__balloon_small-bot{
+    max-width: 73px;
+
+    @include m.respond(medium){
+      max-width: 40px;
+    }
+  }
+
+  &__balloon_small-top{
+    top: 168px;
+    right: 40px;
+
+    @include m.respond(medium){
+      top: 20px;
+      right: 40px;
+    }
+  }
+
+  &__balloon_small-bot{
+    top: 332px;
+    right: -32px;
+
+    @include m.respond(medium){
+      top: 120px;
+      right: 0;
+    }
+  }
+
+  &__balloon_big{
+    top: 0;
+    max-width: 206px;
+
+    @include m.respond(medium){
+      max-width: 100px;
+    }
+  }
+
+  &__container{
+    &:first-of-type{
+      flex: 0 0 calc(40% - 51px);
+      padding-top: 106px;
+
+      @include m.respond(medium){
+        flex: 0 0 calc(40% - 16px);
+        padding-top: 0;
+      }
+
+      @include m.respond(small){
+        flex: 0 1 100%;
+        padding-top: 0;
+      }
+    }
+
+    &:last-of-type{
+      flex: 0 0 calc(60% - 51px);
+
+      @include m.respond(medium){
+        flex: 0 0 calc(60% - 16px);
+      }
+
+      @include m.respond(small){
+        flex: 0 1 100%;
+      }
+
+      img{
+        width: 100%;
+      }
+    }
+  }
+
+  &__tour{
+    position: relative;
+    margin-bottom: 134px;
+
+    @include m.respond(medium){
+      margin-bottom: 60px;
+    }
+
+    @include m.respond(small){
+      margin-bottom: 32px;
+    }
+  }
+
+  &__date{
+    font-family: v.$second-family;
+    font-size: v.$title-m-fs;
+    font-weight: v.$second-fw;
+    color: v.$accent-color;
+    line-height: 0.72;
+    margin-bottom: 52px;
+
+    @include m.respond(medium){
+      font-size: v.$title-s-fs;
+      text-align: center;
+      margin-bottom: 2px;
+    }
+
+    @include m.respond(small){
+      font-size: v.$title-s-fs;
+      text-align: center;
+      margin-bottom: 2px;
+    }
+  }
+
+  &__date-text{
+    position: absolute;
+    top:76px;
+    right: 38px;
+    font-size: v.$second-fs;
+    font-style: italic;
+
+    @include m.respond(medium){
+      position: static;
+      font-size: v.$mobile-fs;
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    @include m.respond(small){
+      position: static;
+      font-size: v.$mobile-fs;
+      text-align: center;
+      margin-bottom: 4px;
+    }
+  }
+
+  &__cost{
+    font-family: v.$second-family;
+    font-size: v.$title-m-fs;
+    font-weight: v.$second-fw;
+    color: v.$accent-color;
+    line-height: 0.72;
+    text-align: center;
+    padding-left: 10px;
+
+    @include m.respond(medium){
+      font-size: v.$title-s-fs;
+      margin-bottom: 2px;
+    }
+
+    @include m.respond(small){
+      font-size: v.$title-s-fs;
+      text-align: center;
+      margin-bottom: 2px;
+    }
+  }
+
+  &__cost-text{
+    position: absolute;
+    top:200px;
+    right: 56px;
+    font-size: v.$second-fs;
+
+    @include m.respond(medium){
+      position: static;
+      font-size: v.$mobile-fs;
+      text-align: center;
+    }
+
+    @include m.respond(small){
+      position: static;
+      font-size: v.$mobile-fs;
+      text-align: center;
+    }
+  }
+
+  &__form-title{
+    font-size: v.$second-fs;
+    text-align: center;
+    line-height: 1.1;
+    margin-bottom: 28px;
+
+    @include m.respond(medium){
+      font-size: v.$main-fs;
+      margin-bottom: 16px;
+    }
+
+    @include m.respond(small){
+      font-size: v.$main-fs;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__form{
+      display: flex;
+      flex-direction: column;
+
+      input{
+        background-color: v.$bg-color;
+        border: 1px solid v.$accent-color;
+        font-size: v.$main-fs;
+        padding: 14px 0 15px 31px;
+
+        @include m.respond(small){
+          font-size: v.$mobile-fs;
+          padding: 10px 0 10px 16px;
+        }
+
+        &:focus{
+          border-color: v.$main-color;
+        }
+
+        &::placeholder{
+          color: v.$main-color;
+          font-size: v.$main-fs;
+          font-weight: v.$main-fw;
+          opacity: 0.5;
+
+          @include m.respond(medium){
+            font-size: v.$mobile-fs;
+          }
+
+          @include m.respond(small){
+            font-size: v.$mobile-fs;
+          }
+        }
+      }
+  }
+
+  &__error{
+    font-size: v.$mobile-fs;
+    opacity: 0;
+    pointer-events: none;
+    text-align: left;
+    margin-bottom: 6px;
+
+    @include m.respond(medium){
+      font-size: v.$mobile-s-fs;
+    }
+
+    @include m.respond(small){
+      font-size: v.$mobile-s-fs;
+    }
+
+    &.active{
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  &__btn{
+    padding:12px 40px 10px;
+    margin: 0 auto;
+  }
+}
